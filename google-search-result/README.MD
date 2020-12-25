@@ -1,0 +1,1 @@
+This is a search result clone page. It imitates the results for "search results" on the search engine Google.
