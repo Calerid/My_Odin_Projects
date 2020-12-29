@@ -1,5 +1,3 @@
-let googleClickListener = document.
-
 function googleClick() {
   let feelingLucky = document.getElementById("right-button").innerHTML;
   var replacedString = feelingLucky.replace("Lucky", randomLucky());

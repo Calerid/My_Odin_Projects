@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "google-homepage"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "My_Odin_Projects"
+	}
+}
