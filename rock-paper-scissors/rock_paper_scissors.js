@@ -1,0 +1,4 @@
+function computerPlay(){
+
+    return computerSelection;
+} 
