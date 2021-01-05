@@ -2,12 +2,17 @@ let playerWins = 0;
 let computerWins = 0;
 let roundCount = 0;
 let playerSelection = prompt("Please enter Rock, Paper, or scissors").toLowerCase();
+let computerSelection = "";
 
 function computerPlay() {
   let rPSS = ["rock", "paper", "scissors"];
-  var computerSelection = rPSS[Math.floor(Math.random() * rPSS.length)];
+  computerSelection = rPSS[Math.floor(Math.random() * rPSS.length)];
   return computerSelection;
 }
+
+//Calls the computer play function
+
+computerPlay();
 
 // Win lose messages
 
@@ -41,14 +46,14 @@ function playGame(playerSelection, computerSelection) {
 
 function rock(computerSelection, winLossMessages) {
   if (computerSelection === "rock") {
-    console.log(draw);
+    console.log(winLossMessages[0]);
     roundCount += 1;
   } else if (computerSelection === "paper") {
-    console.log(lose);
+    console.log(winLossMessages[2]);
     computerWins += 1;
     roundCount += 1;
   } else if (computerSelection === "scissors") {
-    console.log(win);
+    console.log(winLossMessages[1]);
     playerWins += 1;
     roundCount += 1;
   }
@@ -57,14 +62,14 @@ function rock(computerSelection, winLossMessages) {
 
 function paper(computerSelection, winLossMessages) {
   if (computerSelection === "rock") {
-    console.log(win);
+    console.log(winLossMessages[1]);
     roundCount += 1;
   } else if (computerSelection === "paper") {
-    console.log(draw);
+    console.log(winLossMessages[0]);
     computerWins += 1;
     roundCount += 1;
   } else if (computerSelection === "scissors") {
-    console.log(loss);
+    console.log(winLossMessages[2]);
     playerWins += 1;
     roundCount += 1;
   }
@@ -73,14 +78,14 @@ function paper(computerSelection, winLossMessages) {
 
 function scissors(computerSelection, winLossMessages) {
   if (computerSelection === "rock") {
-    console.log(win);
+    console.log(winLossMessages[1]);
     roundCount += 1;
   } else if (computerSelection === "paper") {
-    console.log(loss);
+    console.log(winLossMessages[2]);
     computerWins += 1;
     roundCount += 1;
   } else if (computerSelection === "scissors") {
-    console.log(draw);
+    console.log(winLossMessages[0]);
     playerWins += 1;
     roundCount += 1;
   }
