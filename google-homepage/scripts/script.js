@@ -1,11 +1,10 @@
-function googleClick() {
-  let feelingLucky = document.getElementById("right-button").innerHTML;
-  var replacedString = feelingLucky.replace("Lucky", randomLucky());
-  document.getElementById("right-button").innerHTML = replacedString;
-}
+var feelingLucky = document.getElementById("right-button").innerHTML;
+
+feelingLucky.addEventListener("onclick", randomLucky());
 
 function randomLucky() {
   let feeling = ["Hungry", "Happy", "Healthy", "Lovey"];
   let randomFeeling = feeling[Math.floor(Math.random() * feeling.length)];
-  return randomFeeling;
+  let replacedString = feelingLucky.replace("Lucky", randomLucky);
+  feelingLucky = replacedString;
 }
