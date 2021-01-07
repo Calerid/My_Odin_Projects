@@ -13,20 +13,13 @@ function computerPlay() {
 //Calls the computer play function
 
 computerPlay();
+playGame(playerSelection, computerPlay());
 
 // Win lose messages
 
 let draw =  `This round was a draw! Try again!`;
 let lose =  `You Lose! ${computerSelection} beats ${playerSelection}!`;
 let winner =  `You win! ${playerSelection} beats ${computerSelection}`;
-
-var winLossMessages = [
-  draw, 
-  lose,
-  winner,
-];
-
-playGame(playerSelection, computerPlay());
 
 function startNewRound() {
   playerSelection = prompt("Please enter Rock, Paper, or scissors");
@@ -46,14 +39,14 @@ function playGame(playerSelection, computerSelection) {
 
 function rock(computerSelection, winLossMessages) {
   if (computerSelection === "rock") {
-    console.log(winLossMessages[0]);
+    console.log(`This round was a draw! Try again!`);
     roundCount += 1;
   } else if (computerSelection === "paper") {
-    console.log(winLossMessages[2]);
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
     computerWins += 1;
     roundCount += 1;
   } else if (computerSelection === "scissors") {
-    console.log(winLossMessages[1]);
+    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     playerWins += 1;
     roundCount += 1;
   }
@@ -62,14 +55,14 @@ function rock(computerSelection, winLossMessages) {
 
 function paper(computerSelection, winLossMessages) {
   if (computerSelection === "rock") {
-    console.log(winLossMessages[1]);
+    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     roundCount += 1;
   } else if (computerSelection === "paper") {
-    console.log(winLossMessages[0]);
+    console.log(`This round was a draw! Try again!`);
     computerWins += 1;
     roundCount += 1;
   } else if (computerSelection === "scissors") {
-    console.log(winLossMessages[2]);
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
     playerWins += 1;
     roundCount += 1;
   }
@@ -78,14 +71,14 @@ function paper(computerSelection, winLossMessages) {
 
 function scissors(computerSelection, winLossMessages) {
   if (computerSelection === "rock") {
-    console.log(winLossMessages[1]);
+    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     roundCount += 1;
   } else if (computerSelection === "paper") {
-    console.log(winLossMessages[2]);
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
     computerWins += 1;
     roundCount += 1;
   } else if (computerSelection === "scissors") {
-    console.log(winLossMessages[0]);
+    console.log(`This round was a draw! Try again!`);
     playerWins += 1;
     roundCount += 1;
   }
