@@ -94,39 +94,47 @@ function scissors(computerSelection) {
 }
 
 function roundCounter(roundCount) {
-  if (roundCount < 5) {
+  if (roundCount <= 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
       let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
       if (yN == "yes") {
-        playerWins = 0;
-        computerWins = 0;
-        roundRount = 0;
+        globalReset();
+        startNewRound();
       } else if (yN === "no") {
         console.log("Boo");
+        globalReset();
       }
     } else if (computerWins === 3) {
       console.log("You lose!");
       let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
       if (yN == "yes") {
-        playerWins = 0;
-        computerWins = 0;
-        roundCount = 0;
+        globalReset();
+        startNewRound();
       } else if (yN === "no") {
         console.log("Boo");
+        globalReset();
       }
     } else if (nobodyWins === 3) {
       console.log("Nobody won this match :( ");
       let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
       if (yN == "yes") {
-        playerWins = 0;
-        computerWins = 0;
-        roundCount = 0;
+        globalReset();
+        startNewRound();
       } else if (yN === "no") {
         console.log("Boo");
+        globalReset();
       }
     } else {
       startNewRound();
     }
   }
+}
+
+function globalReset() {
+  playerWins = 0;
+  computerWins = 0;
+  nobodyWins = 0;
+  roundCount = 0;
+  return console.log("score reset");
 }
