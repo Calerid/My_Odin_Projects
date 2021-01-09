@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+#content-window{
+    width: auto;
+    padding: 100px;
+    margin: 100px;
+}
