@@ -22,7 +22,7 @@ let lose =  `You Lose! ${computerSelection} beats ${playerSelection}!`;
 let winner =  `You win! ${playerSelection} beats ${computerSelection}`;
 
 function startNewRound() {
-  playerSelection = prompt("Please enter Rock, Paper, or scissors");
+  playerSelection = prompt("Please enter Rock, Paper, or scissors").toLowerCase();
   computerPlay();
   playGame(playerSelection, computerSelection);
 }
@@ -37,7 +37,7 @@ function playGame(playerSelection, computerSelection) {
   }
 }
 
-function rock(computerSelection, winLossMessages) {
+function rock(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`This round was a draw! Try again!`);
     roundCount += 1;
@@ -53,7 +53,7 @@ function rock(computerSelection, winLossMessages) {
   return roundCounter(roundCount);
 }
 
-function paper(computerSelection, winLossMessages) {
+function paper(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     roundCount += 1;
@@ -69,7 +69,7 @@ function paper(computerSelection, winLossMessages) {
   return roundCounter(roundCount);
 }
 
-function scissors(computerSelection, winLossMessages) {
+function scissors(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     roundCount += 1;
@@ -98,7 +98,7 @@ function roundCounter(roundCount) {
         console.log("Boo");
       }
     }
-    if (computerWins === 3) {
+    else if (computerWins === 3) {
       console.log("You lose!");
       let yN = prompt("Would you like to play again? Yes or No?").toLowerCase;
       if (yN == "yes") {
