@@ -42,14 +42,15 @@ function rock(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`This round was a draw! Try again!`);
     roundCount += 1;
+    nobodyWins += 1
   } else if (computerSelection === "paper") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    computerWins += 1;
     roundCount += 1;
+    playerWins += 1;
   } else if (computerSelection === "scissors") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    playerWins += 1;
     roundCount += 1;
+    computerWins += 1;
   }
   return roundCounter(roundCount);
 }
@@ -58,14 +59,15 @@ function paper(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     roundCount += 1;
+    computerWins += 1;
   } else if (computerSelection === "paper") {
     console.log(`This round was a draw! Try again!`);
-    computerWins += 1;
     roundCount += 1;
+    nobodyWins += 1;
   } else if (computerSelection === "scissors") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    playerWins += 1;
     roundCount += 1;
+    playerWins += 1;
   }
   return roundCounter(roundCount);
 }
@@ -74,14 +76,15 @@ function scissors(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
     roundCount += 1;
+    computerWins += 1;
   } else if (computerSelection === "paper") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    computerWins += 1;
     roundCount += 1;
+    playerWins += 1;
   } else if (computerSelection === "scissors") {
     console.log(`This round was a draw! Try again!`);
-    playerWins += 1;
     roundCount += 1;
+    nobodyWins += 1;
   }
   return roundCounter(roundCount);
 }
