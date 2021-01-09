@@ -2,7 +2,9 @@ let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
-let playerSelection = prompt("Please enter Rock, Paper, or scissors").toLowerCase();
+let playerSelection = prompt(
+  "Please enter Rock, Paper, or scissors"
+).toLowerCase();
 let computerSelection = "";
 
 function computerPlay() {
@@ -18,12 +20,14 @@ playGame(playerSelection, computerPlay());
 
 // Win lose messages
 
-let draw =  `This round was a draw! Try again!`;
-let lose =  `You Lose! ${computerSelection} beats ${playerSelection}!`;
-let winner =  `You win! ${playerSelection} beats ${computerSelection}`;
+let draw = `This round was a draw! Try again!`;
+let lose = `You Lose! ${computerSelection} beats ${playerSelection}!`;
+let winner = `You win! ${playerSelection} beats ${computerSelection}`;
 
 function startNewRound() {
-  playerSelection = prompt("Please enter Rock, Paper, or scissors").toLowerCase();
+  playerSelection = prompt(
+    "Please enter Rock, Paper, or scissors"
+  ).toLowerCase();
   computerPlay();
   playGame(playerSelection, computerSelection);
 }
@@ -42,7 +46,7 @@ function rock(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`This round was a draw! Try again!`);
     roundCount += 1;
-    nobodyWins += 1
+    nobodyWins += 1;
   } else if (computerSelection === "paper") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
     roundCount += 1;
@@ -93,7 +97,7 @@ function roundCounter(roundCount) {
   if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
-      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase;
+      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
       if (yN == "yes") {
         playerWins = 0;
         computerWins = 0;
@@ -103,7 +107,17 @@ function roundCounter(roundCount) {
       }
     } else if (computerWins === 3) {
       console.log("You lose!");
-      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase;
+      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
+      if (yN == "yes") {
+        playerWins = 0;
+        computerWins = 0;
+        roundCount = 0;
+      } else if (yN === "no") {
+        console.log("Boo");
+      }
+    } else if (nobodyWins === 3) {
+      console.log("Nobody won this match :( ");
+      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
       if (yN == "yes") {
         playerWins = 0;
         computerWins = 0;
