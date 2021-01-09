@@ -1,5 +1,6 @@
 let playerWins = 0;
 let computerWins = 0;
+let nobodyWins = 0;
 let roundCount = 0;
 let playerSelection = prompt("Please enter Rock, Paper, or scissors").toLowerCase();
 let computerSelection = "";
@@ -97,8 +98,7 @@ function roundCounter(roundCount) {
       } else if (yN === "no") {
         console.log("Boo");
       }
-    }
-    else if (computerWins === 3) {
+    } else if (computerWins === 3) {
       console.log("You lose!");
       let yN = prompt("Would you like to play again? Yes or No?").toLowerCase;
       if (yN == "yes") {
