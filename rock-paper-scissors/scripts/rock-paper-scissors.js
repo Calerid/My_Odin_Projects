@@ -94,7 +94,7 @@ function scissors(computerSelection) {
 }
 
 function roundCounter(roundCount) {
-  if (roundCount <= 5) {
+  if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
       let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
@@ -127,6 +127,16 @@ function roundCounter(roundCount) {
       }
     } else {
       startNewRound();
+    }
+  } else if (roundCount === 5) {
+    console.log("Nobody won this match :( ");
+    let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
+    if (yN == "yes") {
+      globalReset();
+      startNewRound();
+    } else if (yN === "no") {
+      console.log("Boo");
+      globalReset();
     }
   }
 }
