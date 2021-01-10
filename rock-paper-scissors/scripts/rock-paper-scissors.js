@@ -38,6 +38,19 @@ function playGame(playerSelection, computerSelection) {
   }
 }
 
+function addPlayerWins() {
+  roundCount += 1;
+  userWins += 1;
+}
+function addComputerWins() {
+  roundCount += 1;
+  computerWins += 1;
+}
+function addNobodyWins() {
+  roundCount += 1;
+  nobodyWins += 1;
+}
+
 function rock(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`This round was a draw! Try again!`);
