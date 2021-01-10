@@ -4,8 +4,6 @@ let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
-let computerSelection = "";
-let playerSelection = "";
 
 
 //initiates the new round by calling startNewRound. startNewRound calls for
@@ -14,6 +12,8 @@ let playerSelection = "";
 startNewRound();
 
 function startNewRound() {
+  let computerSelection = "";
+  let playerSelection = "";
   playerPlay();
   computerPlay();
   playGame(playerSelection, computerSelection);
