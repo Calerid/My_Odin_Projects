@@ -40,7 +40,7 @@ function playGame(playerSelection, computerSelection) {
 
 function addPlayerWins() {
   roundCount += 1;
-  userWins += 1;
+  playerWins += 1;
 }
 function addComputerWins() {
   roundCount += 1;
@@ -54,16 +54,13 @@ function addNobodyWins() {
 function rock(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`This round was a draw! Try again!`);
-    roundCount += 1;
-    nobodyWins += 1;
+    addNobodyWins();
   } else if (computerSelection === "paper") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    roundCount += 1;
-    playerWins += 1;
+    addPlayerWins();
   } else if (computerSelection === "scissors") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    roundCount += 1;
-    computerWins += 1;
+    addComputerWins();
   }
   return roundCounter(roundCount);
 }
@@ -71,16 +68,13 @@ function rock(computerSelection) {
 function paper(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    roundCount += 1;
-    computerWins += 1;
+    addComputerWins();
   } else if (computerSelection === "paper") {
     console.log(`This round was a draw! Try again!`);
-    roundCount += 1;
-    nobodyWins += 1;
+    addNobodyWins();
   } else if (computerSelection === "scissors") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    roundCount += 1;
-    playerWins += 1;
+    addPlayerWins();
   }
   return roundCounter(roundCount);
 }
@@ -88,16 +82,13 @@ function paper(computerSelection) {
 function scissors(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    roundCount += 1;
-    computerWins += 1;
+    addComputerWins();
   } else if (computerSelection === "paper") {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    roundCount += 1;
-    playerWins += 1;
+    addPlayerWins();
   } else if (computerSelection === "scissors") {
     console.log(`This round was a draw! Try again!`);
-    roundCount += 1;
-    nobodyWins += 1;
+    addNobodyWins();
   }
   return roundCounter(roundCount);
 }
