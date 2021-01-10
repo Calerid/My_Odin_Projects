@@ -7,6 +7,10 @@ let roundCount = 0;
 let computerSelection = "";
 let playerSelection = "";
 
+
+//initiates the new round by calling startNewRound. startNewRound calls for
+// the player and computer functions to make a selection.
+
 startNewRound();
 
 function startNewRound() {
@@ -26,7 +30,7 @@ function computerPlay() {
 }
 
 // playGame takes the player and computer input. passes computerPlay argument to the correct 
-//scoring function
+//scoring function.
 
 function playGame(playerSelection, computerSelection) {
   if (playerSelection === "rock") {
@@ -38,6 +42,7 @@ function playGame(playerSelection, computerSelection) {
   }
 }
 
+// "add" functions tally the score. called by functions rock(), paper(), scissors().
 function addPlayerWins() {
   roundCount += 1;
   playerWins += 1;
@@ -51,6 +56,8 @@ function addNobodyWins() {
   nobodyWins += 1;
 }
 
+//rock() paper() and scissors () take computerSelection as argument. 
+// these decides the outcome of the round amd call the add functions.
 function rock(computerSelection) {
   if (computerSelection === "rock") {
     console.log(`This round was a draw! Try again!`);
@@ -93,6 +100,7 @@ function scissors(computerSelection) {
   return roundCounter(roundCount);
 }
 
+// roundCounter checks to see if the match score equals a win or loss.
 function roundCounter(roundCount) {
   if (roundCount < 5) {
     if (playerWins === 3) {
