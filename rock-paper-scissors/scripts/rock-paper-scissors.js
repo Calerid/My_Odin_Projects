@@ -1,3 +1,4 @@
+const gameChoices = ["rock", "paper", "scissors"];
 let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
@@ -8,8 +9,7 @@ let playerSelection = prompt(
 let computerSelection = "";
 
 function computerPlay() {
-  let rPSS = ["rock", "paper", "scissors"];
-  computerSelection = rPSS[Math.floor(Math.random() * rPSS.length)];
+  computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
   return computerSelection;
 }
 
