@@ -5,9 +5,18 @@ let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
 let computerSelection = "";
+let playerSelection = "";
+
+startNewRound();
+
+function startNewRound() {
+  playerPlay();
+  computerPlay();
+  playGame(playerSelection, computerSelection);
+}
 
 function playerPlay(){
-  let playerSelection = prompt("Please enter Rock, Paper, or scissors")
+  playerSelection = prompt("Please enter Rock, Paper, or scissors")
   return playerSelection.toLowerCase();
 } 
 
@@ -16,24 +25,8 @@ function computerPlay() {
   return computerSelection;
 }
 
-//Calls the computer play function
-
-computerPlay();
-playGame(playerSelection, computerPlay());
-
-// Win lose messages
-
-let draw = `This round was a draw! Try again!`;
-let lose = `You Lose! ${computerSelection} beats ${playerSelection}!`;
-let winner = `You win! ${playerSelection} beats ${computerSelection}`;
-
-function startNewRound() {
-  playerSelection = prompt(
-    "Please enter Rock, Paper, or scissors"
-  ).toLowerCase();
-  computerPlay();
-  playGame(playerSelection, computerSelection);
-}
+// playGame takes the player and computer input. passes computerPlay argument to the correct 
+//scoring function
 
 function playGame(playerSelection, computerSelection) {
   if (playerSelection === "rock") {
