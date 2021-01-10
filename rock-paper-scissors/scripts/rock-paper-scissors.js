@@ -1,12 +1,15 @@
 const gameChoices = ["rock", "paper", "scissors"];
+
 let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
-let playerSelection = prompt(
-  "Please enter Rock, Paper, or scissors"
-).toLowerCase();
 let computerSelection = "";
+
+function playerPlay(){
+  let playerSelection = prompt("Please enter Rock, Paper, or scissors")
+  return playerSelection.toLowerCase();
+} 
 
 function computerPlay() {
   computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
@@ -146,5 +149,5 @@ function globalReset() {
   computerWins = 0;
   nobodyWins = 0;
   roundCount = 0;
-  return console.log("score reset");
+  console.log("score reset");
 }
