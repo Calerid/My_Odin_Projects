@@ -1,10 +1,11 @@
 const gameChoices = ["rock", "paper", "scissors"];
 
+let computerSelection = "";
+let playerSelection = "";
 let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
-
 
 //initiates the new round by calling startNewRound. startNewRound calls for
 // the player and computer functions to make a selection.
@@ -12,24 +13,22 @@ let roundCount = 0;
 startNewRound();
 
 function startNewRound() {
-  let computerSelection = "";
-  let playerSelection = "";
   playerPlay();
   computerPlay();
   playGame(playerSelection, computerSelection);
 }
 
-function playerPlay(){
-  playerSelection = prompt("Please enter Rock, Paper, or scissors")
-  return playerSelection.toLowerCase();
-} 
+function playerPlay() {
+  playerSelection = prompt("Please enter Rock, Paper, or scissors").toLowerCase();
+  return playerSelection;
+}
 
 function computerPlay() {
   computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
   return computerSelection;
 }
 
-// playGame takes the player and computer input. passes computerPlay argument to the correct 
+// playGame takes the player and computer input. passes computerPlay argument to the correct
 //scoring function.
 
 function playGame(playerSelection, computerSelection) {
@@ -43,58 +42,52 @@ function playGame(playerSelection, computerSelection) {
 }
 
 // "add" functions tally the score. called by functions rock(), paper(), scissors().
-function addPlayerWins() {
+function addPlayerWins(playerSelection, computerSelection) {
+  console.log(`You win! ${playerSelection} beats ${computerSelection}`);
   roundCount += 1;
   playerWins += 1;
 }
-function addComputerWins() {
+function addComputerWins(playerSelection, computerSelection) {
+  console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
   roundCount += 1;
   computerWins += 1;
 }
 function addNobodyWins() {
+  console.log(`This round was a draw! Try again!`);
   roundCount += 1;
   nobodyWins += 1;
 }
 
-//rock() paper() and scissors () take computerSelection as argument. 
+//rock() paper() and scissors () take computerSelection as argument.
 // these decides the outcome of the round amd call the add functions.
 function rock(computerSelection) {
   if (computerSelection === "rock") {
-    console.log(`This round was a draw! Try again!`);
     addNobodyWins();
   } else if (computerSelection === "paper") {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    addPlayerWins();
+    addPlayerWins(playerSelection, computerSelection);
   } else if (computerSelection === "scissors") {
-    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    addComputerWins();
+    addComputerWins(playerSelection, computerSelection);
   }
   return roundCounter(roundCount);
 }
 
 function paper(computerSelection) {
   if (computerSelection === "rock") {
-    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    addComputerWins();
+    addComputerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
-    console.log(`This round was a draw! Try again!`);
     addNobodyWins();
   } else if (computerSelection === "scissors") {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    addPlayerWins();
+    addPlayerWins(playerSelection, computerSelection);
   }
   return roundCounter(roundCount);
 }
 
 function scissors(computerSelection) {
   if (computerSelection === "rock") {
-    console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-    addComputerWins();
+    addComputerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    addPlayerWins();
+    addPlayerWins(playerSelection, computerSelection);
   } else if (computerSelection === "scissors") {
-    console.log(`This round was a draw! Try again!`);
     addNobodyWins();
   }
   return roundCounter(roundCount);
