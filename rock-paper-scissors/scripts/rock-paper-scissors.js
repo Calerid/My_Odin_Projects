@@ -95,39 +95,39 @@ function scissors(computerSelection) {
 
 // roundCounter checks to see if the match score equals a win or loss.
 function newGamePrompt(){
-  let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
-  return yN
+  let playAgain= prompt("Would you like to play again? Yes or No?").toLowerCase();
+  return playAgain;
 }
 
-function roundCounter(roundCount) {
+function roundCounter(roundCount, playAgain) {
   if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
-      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
-      if (yN == "yes") {
+      newGamePrompt()
+      if (playAgain == "yes") {
         globalReset();
         startNewRound();
-      } else if (yN === "no") {
+      } else if (playAgain === "no") {
         console.log("Boo");
         globalReset();
       }
     } else if (computerWins === 3) {
       console.log("You lose!");
-      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
-      if (yN == "yes") {
+      newGamePrompt()
+      if (playAgain == "yes") {
         globalReset();
         startNewRound();
-      } else if (yN === "no") {
+      } else if (playAgain === "no") {
         console.log("Boo");
         globalReset();
       }
     } else if (nobodyWins === 3) {
       console.log("Nobody won this match :( ");
-      let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
-      if (yN == "yes") {
+      newGamePrompt()
+      if (playAgain == "yes") {
         globalReset();
         startNewRound();
-      } else if (yN === "no") {
+      } else if (playAgain === "no") {
         console.log("Boo");
         globalReset();
       }
@@ -136,11 +136,11 @@ function roundCounter(roundCount) {
     }
   } else if (roundCount === 5) {
     console.log("Nobody won this match :( ");
-    let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
-    if (yN == "yes") {
+    newGamePrompt()
+    if (playAgain == "yes") {
       globalReset();
       startNewRound();
-    } else if (yN === "no") {
+    } else if (playAgain === "no") {
       console.log("Boo");
       globalReset();
     }
