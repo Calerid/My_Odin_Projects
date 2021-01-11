@@ -1,7 +1,7 @@
 const gameChoices = ["rock", "paper", "scissors"];
-
-let computerSelection = "";
 let playerSelection = "";
+let computerSelection = "";
+
 let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
@@ -11,7 +11,6 @@ let roundCount = 0;
 // the player and computer functions to make a selection.
 
 startNewRound();
-
 function startNewRound() {
   playerPlay();
   computerPlay();
@@ -27,7 +26,6 @@ function computerPlay() {
   computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
   return computerSelection;
 }
-
 // playGame takes the player and computer input. passes computerPlay argument to the correct
 //scoring function.
 
@@ -98,8 +96,13 @@ function newGamePrompt(){
   let playAgain= prompt("Would you like to play again? Yes or No?").toLowerCase();
   return playAgain;
 }
+function newGameNo(){
+  console.log("Thank you for playing!");
+  console.log(`Your wins: ${playerWins} \n Computer Wins: ${computerWins} \n Draws: ${nobodyWins}`);
+  globalReset();
+}
 
-function roundCounter(roundCount, playAgain) {
+function roundCounter(roundCount) {
   if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
