@@ -106,7 +106,7 @@ function roundCounter(roundCount) {
   if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
-      newGamePrompt()
+      playAgain = newGamePrompt();
       if (playAgain == "yes") {
         globalReset();
         startNewRound();
@@ -116,7 +116,7 @@ function roundCounter(roundCount) {
       }
     } else if (computerWins === 3) {
       console.log("You lose!");
-      newGamePrompt()
+      playAgain = newGamePrompt()
       if (playAgain == "yes") {
         globalReset();
         startNewRound();
@@ -126,7 +126,7 @@ function roundCounter(roundCount) {
       }
     } else if (nobodyWins === 3) {
       console.log("Nobody won this match :( ");
-      newGamePrompt()
+      playAgain = newGamePrompt()
       if (playAgain == "yes") {
         globalReset();
         startNewRound();
@@ -139,7 +139,7 @@ function roundCounter(roundCount) {
     }
   } else if (roundCount === 5) {
     console.log("Nobody won this match :( ");
-    newGamePrompt()
+    playAgain = newGamePrompt()
     if (playAgain == "yes") {
       globalReset();
       startNewRound();
