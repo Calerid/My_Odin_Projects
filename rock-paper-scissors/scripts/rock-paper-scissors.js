@@ -92,42 +92,44 @@ function scissors(computerSelection) {
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
-function newGamePrompt(){
-  let playAgain= prompt("Would you like to play again? Yes or No?").toLowerCase();
+function newGamePrompt() {
+  let playAgain = prompt("Would you like to play again? Yes or No?").toLowerCase();
   return playAgain;
 }
-function newGameNo(){
+
+function newGameNo() {
   console.log("Thank you for playing!");
-  console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
   globalReset();
 }
 
+function newGameYes() {
+  globalReset();
+  startNewRound();
+}
+
 function roundCounter(roundCount) {
-  if (roundCount < 5) {
+  if (roundCount <= 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
       playAgain = newGamePrompt();
-      if (playAgain == "yes") {
-        globalReset();
-        startNewRound();
+      if (playAgain === "yes") {
+        newGameYes()
       } else if (playAgain === "no") {
-        newGameNo()    
+        newGameNo()
       }
     } else if (computerWins === 3) {
       console.log("You lose!");
       playAgain = newGamePrompt()
-      if (playAgain == "yes") {
-        globalReset();
-        startNewRound();
+      if (playAgain === "yes") {
+        newGameYes()
       } else if (playAgain === "no") {
-        newGameNo()   
+        newGameNo()
       }
     } else if (nobodyWins === 3) {
       console.log("Nobody won this match :( ");
       playAgain = newGamePrompt()
-      if (playAgain == "yes") {
-        globalReset();
-        startNewRound();
+      if (playAgain === "yes") {
+        newGameYes()
       } else if (playAgain === "no") {
         newGameNo()
       }
@@ -137,17 +139,17 @@ function roundCounter(roundCount) {
   } else if (roundCount === 5) {
     console.log("Nobody won this match :( ");
     playAgain = newGamePrompt()
-    if (playAgain == "yes") {
-      globalReset();
-      startNewRound();
+    if (playAgain === "yes") {
+      newGameYes()
     } else if (playAgain === "no") {
       newGameNo()
-      
+
     }
   }
 }
 
 function globalReset() {
+  console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
   playerWins = 0;
   computerWins = 0;
   nobodyWins = 0;
