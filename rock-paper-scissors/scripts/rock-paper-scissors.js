@@ -108,7 +108,7 @@ function newGameYes() {
 }
 
 function roundCounter(roundCount) {
-  if (roundCount <= 5) {
+  if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
       playAgain = newGamePrompt();
@@ -118,19 +118,19 @@ function roundCounter(roundCount) {
         newGameNo()
       }
     } else if (computerWins === 3) {
-      console.log("You lose!");
-      playAgain = newGamePrompt()
-      if (playAgain === "yes") {
+        console.log("You lose!");
+        playAgain = newGamePrompt()
+        if (playAgain === "yes") {
         newGameYes()
       } else if (playAgain === "no") {
         newGameNo()
       }
     } else if (nobodyWins === 3) {
-      console.log("Nobody won this match :( ");
-      playAgain = newGamePrompt()
-      if (playAgain === "yes") {
+        console.log("Nobody won!");
+        playAgain = newGamePrompt()
+        if (playAgain === "yes") {
         newGameYes()
-      } else if (playAgain === "no") {
+        } else if (playAgain === "no") {
         newGameNo()
       }
     } else {
