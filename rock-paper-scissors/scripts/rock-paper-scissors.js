@@ -98,7 +98,7 @@ function newGamePrompt(){
 }
 function newGameNo(){
   console.log("Thank you for playing!");
-  console.log(`Your wins: ${playerWins} \n Computer Wins: ${computerWins} \n Draws: ${nobodyWins}`);
+  console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
   globalReset();
 }
 
@@ -111,8 +111,7 @@ function roundCounter(roundCount) {
         globalReset();
         startNewRound();
       } else if (playAgain === "no") {
-        console.log("Boo");
-        globalReset();
+        newGameNo()    
       }
     } else if (computerWins === 3) {
       console.log("You lose!");
@@ -121,8 +120,7 @@ function roundCounter(roundCount) {
         globalReset();
         startNewRound();
       } else if (playAgain === "no") {
-        console.log("Boo");
-        globalReset();
+        newGameNo()   
       }
     } else if (nobodyWins === 3) {
       console.log("Nobody won this match :( ");
@@ -131,8 +129,7 @@ function roundCounter(roundCount) {
         globalReset();
         startNewRound();
       } else if (playAgain === "no") {
-        console.log("Boo");
-        globalReset();
+        newGameNo()
       }
     } else {
       startNewRound();
@@ -144,8 +141,8 @@ function roundCounter(roundCount) {
       globalReset();
       startNewRound();
     } else if (playAgain === "no") {
-      console.log("Boo");
-      globalReset();
+      newGameNo()
+      
     }
   }
 }
