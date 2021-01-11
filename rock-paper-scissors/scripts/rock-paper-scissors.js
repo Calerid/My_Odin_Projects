@@ -94,6 +94,11 @@ function scissors(computerSelection) {
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
+function newGamePrompt(){
+  let yN = prompt("Would you like to play again? Yes or No?").toLowerCase();
+  return yN
+}
+
 function roundCounter(roundCount) {
   if (roundCount < 5) {
     if (playerWins === 3) {
