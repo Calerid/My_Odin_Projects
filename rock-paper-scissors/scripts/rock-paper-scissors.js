@@ -1,4 +1,4 @@
-const gameChoices = ["rock", "paper", "scissors"];
+const GAME_CHOICE = ["rock", "paper", "scissors"];
 let playerSelection = "";
 let computerSelection = "";
 
@@ -24,7 +24,7 @@ function playerPlay() {
 }
 
 function computerPlay() {
-  computerSelection = gameChoices[Math.floor(Math.random() * gameChoices.length)];
+  computerSelection = GAME_CHOICE[Math.floor(Math.random() * GAME_CHOICE.length)];
   return computerSelection;
 }
 // playGame takes the player and computer input. passes computerPlay argument to the correct
