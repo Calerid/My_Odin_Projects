@@ -12,6 +12,7 @@ let roundCount = 0;
 
 startNewRound();
 function startNewRound() {
+  roundCount += 1;
   playerPlay();
   computerPlay();
   playGame(playerSelection, computerSelection);
@@ -29,7 +30,7 @@ function computerPlay() {
 // playGame takes the player and computer input. passes computerPlay argument to the correct
 //scoring function.
 
-function playGame(playerSelection, computerSelection) {
+function playGame(playerSelection, computerSelection, roundCount) {
   if (playerSelection === "rock") {
     rock(computerSelection);
   } else if (playerSelection === "paper") {
@@ -42,17 +43,14 @@ function playGame(playerSelection, computerSelection) {
 // "add" functions tally the score. called by functions rock(), paper(), scissors().
 function addPlayerWins(playerSelection, computerSelection) {
   console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-  roundCount += 1;
   playerWins += 1;
 }
 function addComputerWins(playerSelection, computerSelection) {
   console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
-  roundCount += 1;
   computerWins += 1;
 }
 function addNobodyWins() {
   console.log(`This round was a draw! Try again!`);
-  roundCount += 1;
   nobodyWins += 1;
 }
 
