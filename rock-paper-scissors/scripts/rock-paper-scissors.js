@@ -37,6 +37,11 @@ function playGame(playerSelection, computerSelection, roundCount) {
     paper(computerSelection);
   } else if (playerSelection === "scissors") {
     scissors(computerSelection);
+  } else if (playerSelection === "restart") {
+    newGameYes();
+  } else {
+    roundCount -= 1;
+    startNewRound();
   }
 }
 
