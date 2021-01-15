@@ -149,6 +149,9 @@ function roundCounter(roundCount, playerWins, computerWins) {
       newGameNo()
 
     }
+  } else if (roundCount > 5) {
+    console.log("An error has occured: \n The game has run too many rounds. Restarting")
+    newGameYes();
   }
 }
 
