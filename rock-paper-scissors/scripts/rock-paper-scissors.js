@@ -64,7 +64,7 @@ function rock(computerSelection) {
   } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
   }
-  return roundCounter(roundCount);
+  return roundCounter(roundCount, playerWins, computerWins);
 }
 
 function paper(computerSelection) {
@@ -75,7 +75,7 @@ function paper(computerSelection) {
   } else if (computerSelection === "scissors") {
     addPlayerWins(playerSelection, computerSelection);
   }
-  return roundCounter(roundCount);
+  return roundCounter(roundCount, playerWins, computerWins);
 }
 
 function scissors(computerSelection) {
@@ -86,7 +86,7 @@ function scissors(computerSelection) {
   } else if (computerSelection === "scissors") {
     addNobodyWins();
   }
-  return roundCounter(roundCount);
+  return roundCounter(roundCount, playerWins, computerWins);
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
@@ -105,9 +105,9 @@ function newGameYes() {
   startNewRound();
 }
 
-function roundCounter(roundCount) {
+function roundCounter(roundCount, playerWins, computerWins) {
   console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
-  if (roundCount < 5) {
+  if (roundCount <= 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
       playAgain = newGamePrompt();
