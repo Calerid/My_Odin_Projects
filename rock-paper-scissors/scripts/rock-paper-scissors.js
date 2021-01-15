@@ -1,3 +1,4 @@
+debugger
 const GAME_CHOICE = ["rock", "paper", "scissors"];
 let playerSelection = "";
 let computerSelection = "";
@@ -97,7 +98,11 @@ function scissors(computerSelection) {
 // roundCounter checks to see if the match score equals a win or loss.
 function newGamePrompt() {
   let playAgain = prompt("Would you like to play again? Yes or No?").toLowerCase();
-  return playAgain;
+  if (playAgain === "yes") {
+    newGameYes();
+  } else if (playAgain === "no") {
+    newGameNo();
+  }
 }
 
 function newGameNo() {
@@ -110,49 +115,28 @@ function newGameYes() {
   startNewRound();
 }
 
+
 function roundCounter(roundCount, playerWins, computerWins) {
   console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
   if (roundCount <= 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
-      playAgain = newGamePrompt();
-      if (playAgain === "yes") {
-        newGameYes()
-      } else if (playAgain === "no") {
-        newGameNo()
-      }
-    } else if (computerWins === 3) {
-        console.log("You lose!");
-        playAgain = newGamePrompt()
-        if (playAgain === "yes") {
-        newGameYes()
-      } else if (playAgain === "no") {
-        newGameNo()
-      }
-    } else if (nobodyWins === 3) {
-        console.log("Nobody won!");
-        playAgain = newGamePrompt()
-        if (playAgain === "yes") {
-        newGameYes()
-        } else if (playAgain === "no") {
-        newGameNo()
-      }
-    } else {
-      startNewRound();
-    }
-  } else if (roundCount === 5) {
-    console.log("Nobody won this match :( ");
-    playAgain = newGamePrompt()
-    if (playAgain === "yes") {
-      newGameYes()
-    } else if (playAgain === "no") {
-      newGameNo()
-
-    }
-  } else if (roundCount > 5) {
-    console.log("An error has occured: \n The game has run too many rounds. Restarting")
-    newGameYes();
+      newGamePrompt();
+  } else if (computerWins === 3) {
+      console.log("You lose!");
+      newGamePrompt();
+  } else if (nobodyWins === 3) {
+      console.log("Nobody won!");
+      newGamePrompt();
+  } else if (roundCount === 5 && computerWins < 3 && playerWins < 3 && nobodyWins < 3) {
+        console.log("This game was a draw");
+        startNewRound();
+  } 
   }
+  if (roundCount > 5) {
+    console.log("An error has occured: The game has run too many rounds. Restarting")
+    newGameYes();
+}
 }
 
 function globalReset() {
