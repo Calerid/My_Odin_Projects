@@ -106,6 +106,7 @@ function newGameYes() {
 }
 
 function roundCounter(roundCount) {
+  console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
   if (roundCount < 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
@@ -147,7 +148,6 @@ function roundCounter(roundCount) {
 }
 
 function globalReset() {
-  console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`);
   playerWins = 0;
   computerWins = 0;
   nobodyWins = 0;
