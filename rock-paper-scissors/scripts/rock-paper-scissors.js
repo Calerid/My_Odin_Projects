@@ -10,7 +10,7 @@ let roundCount = 0;
 //initiates the new round by calling startNewRound. startNewRound calls for
 // the player and computer functions to make a selection.
 
-startNewRound();
+
 function startNewRound() {
   roundCount += 1;
   playerPlay();

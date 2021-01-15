@@ -10,15 +10,19 @@
     <div id="content-window">
       <h1>Rock Paper Scissors</h1>
       <p>Instructions:</p>
-      <ul>
+      <span id="game">
+      <ol>
         <p>
           First of all, enter your selection in the form of rock, paper, or
-          scissors
+          scissors. Other inputs will halt the game. In the future I may create checks for valid strings.
         </p>
         <li>Right click; select inspect</li>
         <li>Select Console</li>
+        <li>Click the button</li>
         <li>enjoy!</li>
-      </ul>
+      </ol>
+      <input type="button" value="Play" onclick="startNewRound()">
+    </span>
     </div>
   </body>
 </html>
