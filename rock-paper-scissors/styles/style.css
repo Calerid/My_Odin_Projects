@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+#content-window{
+    width: auto;
+    padding: 100px;
+    margin: 100px;
+}
+#content-window li{
+    text-align: left;
+    font-size: 1.5em;
+}
+#game input[type="button"]{
+    width: 80;
+    height: 50px;
+    border-radius: 10px;
+    background: #6582f8;
+    border-style: none;
+    outline: none;
+}
