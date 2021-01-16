@@ -75,11 +75,11 @@ function rock(computerSelection) {
 
 function paper(computerSelection) {
   if (computerSelection === "rock") {
-    addComputerWins(playerSelection, computerSelection);
+    addPlayerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
     addNobodyWins();
   } else if (computerSelection === "scissors") {
-    addPlayerWins(playerSelection, computerSelection);
+    addComputerWins(playerSelection, computerSelection);
   }
   return roundCounter(roundCount, playerWins, computerWins);
 }
