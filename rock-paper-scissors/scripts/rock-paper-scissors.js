@@ -131,7 +131,9 @@ function roundCounter(roundCount, playerWins, computerWins) {
   } else if (roundCount === 5 && computerWins < 3 && playerWins < 3 && nobodyWins < 3) {
         console.log("This game was a draw");
         startNewRound();
-  } 
+  } else {
+    startNewRound();
+  }
   }
   if (roundCount > 5) {
     console.log("An error has occured: The game has run too many rounds. Restarting")
