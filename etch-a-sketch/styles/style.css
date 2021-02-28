@@ -1,0 +1,18 @@
+html{
+    background: grey;
+}
+h1  {
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+fieldset {
+    display: grid;
+    margin: 0 40% 0 40%;
+    padding: 0px;
+}
+input {
+    width: 100%;
+    padding: 0px;;
+}
