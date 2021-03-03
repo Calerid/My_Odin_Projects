@@ -1,14 +1,14 @@
-const gridContainer = document.querySelector("#grid");
-const gridSizeSet = document.querySelector("#set_grid");
+const gridContainer = document.querySelector('gridContainer')
+const gridButton = document.querySelector('#gridButton')
 
-gridSizeSet.addEventListener("click", setGridSize);
+gridButton.addEventListener("click", gridPrompt);
 
-function setGridSize() {
-  let newSize = prompt("Set the board size");
-  if (newSize < 1 || newSize > 64) {
-    alert("Please enter a number from 1-64");
-    setGridSize();
+function gridPrompt(){
+  const gridInput = prompt("Please enter a number 1-64")
+  if (gridInput > 64 || gridInput < 1 || Number.NaN(gridInput)){
+    alert("Not a valid input");
+    gridPrompt();
   } else {
-    return newSize;
+    return gridInput;
   }
 }
