@@ -1,5 +1,10 @@
 debugger
 const GAME_CHOICE = ["rock", "paper", "scissors"];
+
+const ROCK = document.querySelector('rock');
+const PAPER = document.querySelector('paper');
+const SCISSORS = document.querySelector('scissors');
+
 let playerSelection = "";
 let computerSelection = "";
 

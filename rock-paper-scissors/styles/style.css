@@ -20,3 +20,8 @@ body{
     border-style: none;
     outline: none;
 }
+
+#container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1frS;
+}
