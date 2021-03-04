@@ -3,7 +3,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="scripts/rock-paper-scissors.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
@@ -11,12 +10,12 @@
       <h1>Rock Paper Scissors</h1>
       <div id="score"></div>
       <div id="container">
-        <div id="rock"><h3>Rock</h3></div>
-        <div id="paper"><h3>Paper</h3></div>
-        <div id="scissors"><h3>Scissors</h3></div>
+        <button id="rock" onclick="setRock()"><div><h3>Rock</h3></div></button>
+        <button id="paper" onclick="setPaper()"><div><h3>Paper</h3></div></button>
+        <button id="scissors" onclick="setScissors()"><div><h3>Scissors</h3></div></button>
       </div>
-      <input type="button" value="Play" onclick="startNewRound()">
     </span>
     </div>
   </body>
+  <script src="scripts/rock-paper-scissors.js"></script>
 </html>
