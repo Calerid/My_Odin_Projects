@@ -13,26 +13,24 @@ let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
 
-  ROCK.addEventListener("click", setRock());
-  PAPER.addEventListener("click", setPaper());
-  SCISSORS.addEventListener("click", setScissors());
-
 function setRock() {
   playerSelection = "rock";
+  computerPlay();
   startNewRound(playerSelection);
 }
 function setPaper() {
   playerSelection = "paper";
+  computerPlay();
   startNewRound(playerSelection);
 }
 function setScissors() {
   playerSelection = "scissors";
+  computerPlay();
   startNewRound(playerSelection);
 }
 
 function startNewRound() {
   roundCount += 1;
-  computerPlay();
   playGame(playerSelection, computerSelection);
 }
 
@@ -80,20 +78,20 @@ function rock(computerSelection) {
   if (computerSelection === "rock") {
     addNobodyWins();
   } else if (computerSelection === "paper") {
-    addPlayerWins(playerSelection, computerSelection);
-  } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
+  } else if (computerSelection === "scissors") {
+    addPlayerWins(playerSelection, computerSelection);
   }
   return roundCounter(roundCount, playerWins, computerWins);
 }
 
 function paper(computerSelection) {
   if (computerSelection === "rock") {
-    addComputerWins(playerSelection, computerSelection);
+    addPlayerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
     addNobodyWins();
   } else if (computerSelection === "scissors") {
-    addPlayerWins(playerSelection, computerSelection);
+    addComputerWins(playerSelection, computerSelection);
   }
   return roundCounter(roundCount, playerWins, computerWins);
 }
