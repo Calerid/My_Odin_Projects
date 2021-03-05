@@ -130,7 +130,7 @@ function newGameYes() {
 
 function roundCounter(roundCount, playerWins, computerWins) {
   console.log(
-    `Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins}`
+    `Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins} \nRound Count: ${roundCount}`
   );
   if (roundCount <= 5) {
     if (playerWins === 3) {
