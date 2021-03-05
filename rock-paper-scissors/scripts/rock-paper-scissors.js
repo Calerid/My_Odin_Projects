@@ -128,10 +128,23 @@ function newGameYes() {
   globalReset();
 }
 
-function roundCounter(roundCount, playerWins, computerWins) {
+function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
+  const pScore = document.getElementById("playerScore");
+  const cScore = document.getElementById("cpuScore");
+  const dCount = document.getElementById("drawScore");
+  const rCount = document.getElementById("roundScore");
+
+  pScore.write(`${playerWins}`);
+  cScore.write(`${computerWins}`);
+  dCount.write(`${nobodyWins}`);
+  rCount.write(`${roundCount}`);
+}
+
+function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
   console.log(
     `Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins} \nRound Count: ${roundCount}`
   );
+  updateElements(playerWins, computerWins, roundCount, nobodyWins);
   if (roundCount <= 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");

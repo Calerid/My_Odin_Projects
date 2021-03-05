@@ -8,22 +8,27 @@ body{
     padding: 100px;
     margin: 100px;
 }
-#content-window li{
-    text-align: left;
-    font-size: 1.5em;
-}
-#game input[type="button"]{
-    width: 80;
-    height: 50px;
-    border-radius: 10px;
-    background: #6582f8;
-    border-style: none;
-    outline: none;
-}
 #container{
     display: flexbox;
     text-align: center;
 }
-#container div{
-    width:100px;;
+#button-container div{
+    width:100px;
+    margin: 20px;
+}
+#gameScore{
+    display: flexbox;
+}
+#gameLeft{
+    text-align: left;
+}
+#gameRight{
+    text-align: right;
+}
+#score{
+    margin: auto;
+    padding: 20px;
+    border-style: solid;
+    text-align: center;
+    width: 150px;
 }
