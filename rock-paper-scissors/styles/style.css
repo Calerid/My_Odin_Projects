@@ -20,3 +20,10 @@ body{
     border-style: none;
     outline: none;
 }
+#container{
+    display: flexbox;
+    text-align: center;
+}
+#container div{
+    width:100px;;
+}

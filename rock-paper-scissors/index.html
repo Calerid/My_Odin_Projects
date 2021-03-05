@@ -3,26 +3,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="scripts/rock-paper-scissors.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <div id="content-window">
       <h1>Rock Paper Scissors</h1>
-      <p>Instructions:</p>
-      <span id="game">
-      <ol>
-        <p>
-          First of all, enter your selection in the form of rock, paper, or
-          scissors. Other inputs will halt the game. In the future I may create checks for valid strings.
-        </p>
-        <li>Right click; select inspect</li>
-        <li>Select Console</li>
-        <li>Click the button</li>
-        <li>enjoy!</li>
-      </ol>
-      <input type="button" value="Play" onclick="startNewRound()">
-    </span>
+      <div id="score"></div>
+      <div id="container">
+        <button id="rock" onclick="setRock()"><div><h3>Rock</h3></div></button>
+        <button id="paper" onclick="setPaper()"><div><h3>Paper</h3></div></button>
+        <button id="scissors" onclick="setScissors()"><div><h3>Scissors</h3></div></button>
+      </div>
     </div>
   </body>
+  <script src="scripts/rock-paper-scissors.js"></script>
 </html>
