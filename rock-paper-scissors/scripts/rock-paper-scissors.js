@@ -134,10 +134,10 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   const dCount = document.getElementById("drawScore");
   const rCount = document.getElementById("roundScore");
 
-  pScore.write(`${playerWins}`);
-  cScore.write(`${computerWins}`);
-  dCount.write(`${nobodyWins}`);
-  rCount.write(`${roundCount}`);
+  pScore.textContent = `${playerWins}`;
+  cScore.textContent = `${computerWins}`;
+  dCount.textContent = `${nobodyWins}`;
+  rCount.textContent = `${roundCount}`;
 }
 
 function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
