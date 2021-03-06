@@ -1,4 +1,3 @@
-debugger;
 const GAME_CHOICE = ["rock", "paper", "scissors"];
 
 const ROCK = document.getElementById("#rock");
@@ -86,7 +85,7 @@ function rock(computerSelection) {
   } else if (computerSelection === "scissors") {
     addPlayerWins(playerSelection, computerSelection);
   }
-  return roundCounter(roundCount, playerWins, computerWins);
+  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
 function paper(computerSelection) {
@@ -97,7 +96,7 @@ function paper(computerSelection) {
   } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
   }
-  return roundCounter(roundCount, playerWins, computerWins);
+  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
 function scissors(computerSelection) {
@@ -108,7 +107,7 @@ function scissors(computerSelection) {
   } else if (computerSelection === "scissors") {
     addNobodyWins();
   }
-  return roundCounter(roundCount, playerWins, computerWins);
+  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
@@ -140,11 +139,12 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
 }
 
 function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
-  console.log(
-    `Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins} \nRound Count: ${roundCount}`
-  );
+  console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins} \nRound Count: ${roundCount}`);
   updateElements(playerWins, computerWins, roundCount, nobodyWins);
-  if (roundCount <= 5) {
+  if (roundCount === 5 && computerWins < 3 && playerWins < 3 && nobodyWins < 3 ) {
+    console.log("This game was a draw");
+    newGamePrompt();
+  } else if (roundCount <= 5) {
     if (playerWins === 3) {
       console.log("You are the winner!");
       newGamePrompt();
@@ -154,16 +154,8 @@ function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
     } else if (nobodyWins === 3) {
       console.log("Nobody won!");
       newGamePrompt();
-    } else if (
-      roundCount === 5 &&
-      computerWins < 3 &&
-      playerWins < 3 &&
-      nobodyWins < 3
-    ) {
-      console.log("This game was a draw");
     }
-  }
-  if (roundCount > 5) {
+  } else if (roundCount > 5) {
     console.log(
       "An error has occured: The game has run too many rounds. Restarting"
     );
@@ -176,5 +168,6 @@ function globalReset() {
   computerWins = 0;
   nobodyWins = 0;
   roundCount = 0;
+  updateElements(0, 0, 0, 0);
   console.log("score reset");
 }
