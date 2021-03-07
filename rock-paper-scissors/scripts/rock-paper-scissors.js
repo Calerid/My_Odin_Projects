@@ -85,8 +85,7 @@ function rock(computerSelection) {
   } else if (computerSelection === "scissors") {
     addPlayerWins(playerSelection, computerSelection);
   }
-  updateElements(playerWins, computerWins, roundCount, nobodyWins);
-  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
+  return updateElements(playerWins, computerWins, roundCount, nobodyWins);
 }
 
 function paper(computerSelection) {
@@ -97,8 +96,7 @@ function paper(computerSelection) {
   } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
   }
-  updateElements(playerWins, computerWins, roundCount, nobodyWins);
-  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
+  return updateElements(playerWins, computerWins, roundCount, nobodyWins);
 }
 
 function scissors(computerSelection) {
@@ -109,8 +107,7 @@ function scissors(computerSelection) {
   } else if (computerSelection === "scissors") {
     addNobodyWins();
   }
-  updateElements(playerWins, computerWins, roundCount, nobodyWins);
-  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
+  return updateElements(playerWins, computerWins, roundCount, nobodyWins);
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
@@ -139,6 +136,7 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   CSCORE.textContent = `${computerWins}`;
   DCOUNT.textContent = `${nobodyWins}`;
   RCOUNT.textContent = `${roundCount}`;
+  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
 function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
