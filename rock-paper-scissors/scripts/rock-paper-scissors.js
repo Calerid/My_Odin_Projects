@@ -85,6 +85,7 @@ function rock(computerSelection) {
   } else if (computerSelection === "scissors") {
     addPlayerWins(playerSelection, computerSelection);
   }
+  updateElements(playerWins, computerWins, roundCount, nobodyWins);
   return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
@@ -96,6 +97,7 @@ function paper(computerSelection) {
   } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
   }
+  updateElements(playerWins, computerWins, roundCount, nobodyWins);
   return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
@@ -107,6 +109,7 @@ function scissors(computerSelection) {
   } else if (computerSelection === "scissors") {
     addNobodyWins();
   }
+  updateElements(playerWins, computerWins, roundCount, nobodyWins);
   return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
@@ -140,7 +143,6 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
 
 function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
   console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins} \nRound Count: ${roundCount}`);
-  updateElements(playerWins, computerWins, roundCount, nobodyWins);
   if (roundCount === 5 && computerWins < 3 && playerWins < 3 && nobodyWins < 3 ) {
     console.log("This game was a draw");
     newGamePrompt();

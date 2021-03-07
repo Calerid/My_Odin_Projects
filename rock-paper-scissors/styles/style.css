@@ -16,6 +16,13 @@ body{
     width:100px;
     margin: 20px;
 }
+#button-container > button {
+    color: white;
+    background: rgb(35, 138, 202);
+    border-radius: 30px;
+    border-style: none;
+    text-decoration: none;
+}
 #gameScore{
     display: flexbox;
 }
@@ -26,9 +33,12 @@ body{
     text-align: right;
 }
 #score{
+    color: red;
+    font-size: 1.5em;
+    font-weight: 500;
     margin: auto;
-    padding: 20px;
+    padding: 50px;
     border-style: solid;
     text-align: center;
-    width: 250px;
+    width: 350px;
 }
