@@ -141,7 +141,7 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   CSCORE.textContent = cScore;
   DCOUNT.textContent = dCount;
   RCOUNT.textContent = rCount;
-  return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
+  roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
 function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
@@ -162,8 +162,7 @@ function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
     }
   } else if (roundCount > 5) {
     console.log(
-      "An error has occured: The game has run too many rounds. Restarting"
-    );
+      "An error has occured: The game has run too many rounds. Restarting");
     newGameYes();
   }
 }
