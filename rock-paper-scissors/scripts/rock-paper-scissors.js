@@ -133,10 +133,14 @@ function newGameYes() {
 }
 
 function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
-  PSCORE.textContent = `${playerWins}`;
-  CSCORE.textContent = `${computerWins}`;
-  DCOUNT.textContent = `${nobodyWins}`;
-  RCOUNT.textContent = `${roundCount}`;
+  let pScore = `${playerWins}`;
+  let cScore = `${computerWins}`;
+  let dCount = `${nobodyWins}`;
+  let rCount = `${roundCount}`;
+  PSCORE.textContent = pScore
+  CSCORE.textContent = cScore;
+  DCOUNT.textContent = dCount;
+  RCOUNT.textContent = rCount;
   return roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
