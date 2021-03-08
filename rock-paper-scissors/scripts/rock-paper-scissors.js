@@ -7,6 +7,7 @@ const PSCORE = document.getElementById("playerScore");
 const CSCORE = document.getElementById("cpuScore");
 const DCOUNT = document.getElementById("drawScore");
 const RCOUNT = document.getElementById("roundScore");
+const RMESSAGE = document.getElementById("roundMessage");
 
 let playerSelection = "";
 let computerSelection = "";

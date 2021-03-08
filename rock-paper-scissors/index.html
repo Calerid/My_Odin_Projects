@@ -9,22 +9,19 @@
     <div id="content-window">
       <h1>Rock Paper Scissors</h1>
       <div id="button-container">
-        <button id="rock" onclick="setRock()">
-          <div><h3>Rock</h3></div>
-        </button>
-        <button id="paper" onclick="setPaper()">
-          <div><h3>Paper</h3></div>
-        </button>
-        <button id="scissors" onclick="setScissors()">
-          <div><h3>Scissors</h3></div>
-        </button>
+        <button id="rock" onclick="setRock()">Rock</button>
+        <button id="paper" onclick="setPaper()">Paper</button>
+        <button id="scissors" onclick="setScissors()">Scissors</button>
       </div>
-    </div>
-    <div id="score">
+      <div id="score">
       <p>Player Score: <p id="playerScore">0</p></p>
       <p>Computer Score: <p id="cpuScore">0</p></p>
       <p>Draws: <p id="drawScore">0</p></p>
       <p>Round Count: <p id="roundScore">0</p></p>
+      </div>
+      <div>
+        <h3 id="roundMessage"></h3>
+      </div>
     </div>
   </body>
   <script src="scripts/rock-paper-scissors.js"></script>

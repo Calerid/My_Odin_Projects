@@ -1,44 +1,16 @@
-body{
-    text-align: center;
+html {
     background-color: black;
     color: white;
-}
-#content-window{
-    width: auto;
-    padding: 100px;
-    margin: 100px;
-}
-#container{
-    display: flexbox;
     text-align: center;
 }
-#button-container div{
-    width:100px;
-    margin: 20px;
+h1{
+    font-size: 2.5em;
 }
-#button-container > button {
-    color: white;
-    background: rgb(35, 138, 202);
-    border-radius: 30px;
-    border-style: none;
-    text-decoration: none;
-}
-#gameScore{
-    display: flexbox;
-}
-#gameLeft{
-    text-align: left;
-}
-#gameRight{
-    text-align: right;
+#button-container > button{
+    margin 10px auto 10px auto;
+    width: 125px;
+    height: 75px;
 }
 #score{
-    color: red;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin: auto;
-    padding: 50px;
-    border-style: solid;
-    text-align: center;
-    width: 350px;
+    font-size: 1.2em;
 }
