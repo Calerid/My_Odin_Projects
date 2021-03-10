@@ -3,7 +3,7 @@ const GAME_CHOICE = ["rock", "paper", "scissors"];
 const ROCK = document.getElementById("#rock");
 const PAPER = document.getElementById("#paper");
 const SCISSORS = document.getElementById("#scissors");
-const PPLAYER_SCORE = document.getElementById("playerScore");
+const PLAYER_SCORE = document.getElementById("playerScore");
 const COMPUTER_SCORE = document.getElementById("cpuScore");
 const DRAW_COUNT = document.getElementById("drawScore");
 const ROUND_COUNT = document.getElementById("roundScore");
@@ -138,7 +138,7 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   let dCount = `${nobodyWins}`;
   let rCount = `${roundCount}`;
   PLAYER_SCORE.textContent = pScore
-  CCOMPUTER_SCORE.textContent = cScore;
+  COMPUTER_SCORE.textContent = cScore;
   DRAW_COUNT.textContent = dCount;
   RROUND_COUNT.textContent = rCount;
   roundCounter(roundCount, playerWins, computerWins, nobodyWins);
