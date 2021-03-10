@@ -65,11 +65,11 @@ function playGame() {
   }
 }
 
-function addPlayerWins(playerSelection, computerSelection) {
+function addPlayerWins() {
   console.log(`You win! ${playerSelection} beats ${computerSelection}`);
   playerWins += 1;
 }
-function addComputerWins(playerSelection, computerSelection) {
+function addComputerWins() {
   console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
   computerWins += 1;
 }
