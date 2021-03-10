@@ -51,7 +51,7 @@ function computerPlay() {
   return computerSelection;
 }
 
-function playGame(playerSelection, computerSelection, roundCount) {
+function playGame() {
   if (playerSelection === "rock") {
     rock(computerSelection);
   } else if (playerSelection === "paper") {
@@ -78,7 +78,7 @@ function addNobodyWins() {
   nobodyWins += 1;
 }
 
-function rock(computerSelection) {
+function rock() {
   if (computerSelection === "rock") {
     addNobodyWins();
   } else if (computerSelection === "paper") {
@@ -86,10 +86,10 @@ function rock(computerSelection) {
   } else if (computerSelection === "scissors") {
     addPlayerWins(playerSelection, computerSelection);
   }
-  return updateElements(playerWins, computerWins, roundCount, nobodyWins);
+  updateElements();
 }
 
-function paper(computerSelection) {
+function paper() {
   if (computerSelection === "rock") {
     addPlayerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
@@ -97,10 +97,10 @@ function paper(computerSelection) {
   } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
   }
-  return updateElements(playerWins, computerWins, roundCount, nobodyWins);
+  updateElements();
 }
 
-function scissors(computerSelection) {
+function scissors() {
   if (computerSelection === "rock") {
     addComputerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
@@ -108,7 +108,7 @@ function scissors(computerSelection) {
   } else if (computerSelection === "scissors") {
     addNobodyWins();
   }
-  return updateElements(playerWins, computerWins, roundCount, nobodyWins);
+  updateElements();
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
@@ -132,7 +132,7 @@ function newGameYes() {
   globalReset();
 }
 
-function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
+function updateElements() {
   let pScore = `${playerWins}`;
   let cScore = `${computerWins}`;
   let dCount = `${nobodyWins}`;
@@ -141,10 +141,14 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   COMPUTER_SCORE.textContent = cScore;
   DRAW_COUNT.textContent = dCount;
   ROUND_COUNT.textContent = rCount;
-  roundCounter(roundCount, playerWins, computerWins, nobodyWins);
+  roundCounter();
 }
 
-function roundCounter(roundCount, playerWins, computerWins, nobodyWins) {
+function logForMe() {
+  console.log(PLAYER_SCORE, COMPUTER_SCORE, DRAW_COUNT, ROUND_COUNT);
+};
+
+function roundCounter() {
   console.log(`Your wins: ${playerWins} \nComputer Wins: ${computerWins} \nDraws: ${nobodyWins} \nRound Count: ${roundCount}`);
   if (roundCount === 5 && computerWins < 3 && playerWins < 3 && nobodyWins < 3 ) {
     console.log("This game was a draw");
