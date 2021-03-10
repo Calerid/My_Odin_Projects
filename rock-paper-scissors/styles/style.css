@@ -8,7 +8,7 @@ h1{
 }
 #button-container > button{
     background: #0075ff;
-    margin 10px auto 10px auto;
+    margin: auto;
     width: 125px;
     height: 75px;
 }

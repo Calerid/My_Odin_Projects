@@ -3,11 +3,11 @@ const GAME_CHOICE = ["rock", "paper", "scissors"];
 const ROCK = document.getElementById("#rock");
 const PAPER = document.getElementById("#paper");
 const SCISSORS = document.getElementById("#scissors");
-const PSCORE = document.getElementById("playerScore");
-const CSCORE = document.getElementById("cpuScore");
-const DCOUNT = document.getElementById("drawScore");
-const RCOUNT = document.getElementById("roundScore");
-const RMESSAGE = document.getElementById("roundMessage");
+const PPLAYER_SCORE = document.getElementById("playerScore");
+const COMPUTER_SCORE = document.getElementById("cpuScore");
+const DRAW_COUNT = document.getElementById("drawScore");
+const ROUND_COUNT = document.getElementById("roundScore");
+const ROUND_MESSAGE = document.getElementById("roundMessage");
 
 let playerSelection = "";
 let computerSelection = "";
@@ -137,10 +137,10 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   let cScore = `${computerWins}`;
   let dCount = `${nobodyWins}`;
   let rCount = `${roundCount}`;
-  PSCORE.textContent = pScore
-  CSCORE.textContent = cScore;
-  DCOUNT.textContent = dCount;
-  RCOUNT.textContent = rCount;
+  PLAYER_SCORE.textContent = pScore
+  CCOMPUTER_SCORE.textContent = cScore;
+  DRAW_COUNT.textContent = dCount;
+  RROUND_COUNT.textContent = rCount;
   roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
