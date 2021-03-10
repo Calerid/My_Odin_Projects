@@ -140,7 +140,7 @@ function updateElements(playerWins, computerWins, roundCount, nobodyWins) {
   PLAYER_SCORE.textContent = pScore
   COMPUTER_SCORE.textContent = cScore;
   DRAW_COUNT.textContent = dCount;
-  RROUND_COUNT.textContent = rCount;
+  ROUND_COUNT.textContent = rCount;
   roundCounter(roundCount, playerWins, computerWins, nobodyWins);
 }
 
