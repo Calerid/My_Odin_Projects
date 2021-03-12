@@ -141,7 +141,9 @@ function updateElements() {
   COMPUTER_SCORE.textContent = cScore;
   DRAW_COUNT.textContent = dCount;
   ROUND_COUNT.textContent = rCount;
-  roundCounter();
+  setTimeout(() => {
+    roundCounter();
+  }, 800)
 }
 
 function logForMe() {
