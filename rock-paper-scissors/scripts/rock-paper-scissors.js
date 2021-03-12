@@ -66,15 +66,15 @@ function playGame() {
 }
 
 function addPlayerWins() {
-  console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+  ROUND_MESSAGE.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
   playerWins += 1;
 }
 function addComputerWins() {
-  console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+  ROUND_MESSAGE.textContent = `You Lose! ${computerSelection} beats ${playerSelection}!`;
   computerWins += 1;
 }
 function addNobodyWins() {
-  console.log(`This round was a draw! Try again!`);
+  ROUND_MESSAGE.textContent = `This round was a draw! Try again!`;
   nobodyWins += 1;
 }
 
@@ -179,5 +179,6 @@ function globalReset() {
   nobodyWins = 0;
   roundCount = 0;
   updateElements(0, 0, 0, 0);
+  ROUND_MESSAGE.textContent = "";
   console.log("score reset");
 }
