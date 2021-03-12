@@ -9,9 +9,6 @@ const DRAW_COUNT = document.getElementById("drawScore");
 const ROUND_COUNT = document.getElementById("roundScore");
 const ROUND_MESSAGE = document.getElementById("roundMessage");
 
-let playerSelection = "";
-let computerSelection = "";
-
 let playerWins = 0;
 let computerWins = 0;
 let nobodyWins = 0;
