@@ -17,6 +17,8 @@ let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
 
+updateElements()
+
 function setRock() {
   playerSelection = "rock";
   computerPlay();
@@ -133,10 +135,10 @@ function newGameYes() {
 }
 
 function updateElements() {
-  let pScore = `${playerWins}`;
-  let cScore = `${computerWins}`;
-  let dCount = `${nobodyWins}`;
-  let rCount = `${roundCount}`;
+  let pScore = `Player Score: ${playerWins}`;
+  let cScore = `Computer Score: ${computerWins}`;
+  let dCount = `Draws: ${nobodyWins}`;
+  let rCount = `Round Count: ${roundCount}`;
   PLAYER_SCORE.textContent = pScore
   COMPUTER_SCORE.textContent = cScore;
   DRAW_COUNT.textContent = dCount;
