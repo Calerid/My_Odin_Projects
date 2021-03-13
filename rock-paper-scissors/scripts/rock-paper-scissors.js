@@ -14,6 +14,9 @@ let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
 
+var computerSelection;
+var playerSelection;
+
 updateElements()
 
 function setRock() {
