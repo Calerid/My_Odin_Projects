@@ -14,7 +14,6 @@ let computerWins = 0;
 let nobodyWins = 0;
 let roundCount = 0;
 
-var computerSelection;
 var playerSelection;
 
 updateElements()
@@ -25,7 +24,7 @@ function setRock() {
   startNewRound(playerSelection);
 }
 function setPaper() {
-  playerSelection = "paper";
+  let playerSelection = "paper";
   computerPlay();
   startNewRound(playerSelection);
 }
@@ -37,6 +36,7 @@ function setScissors() {
 
 function startNewRound() {
   roundCount += 1;
+  computerSelection = computerPlay();
   playGame(playerSelection, computerSelection);
 }
 
