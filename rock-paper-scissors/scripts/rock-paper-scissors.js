@@ -51,19 +51,6 @@ function playGame(playerSelection, computerSelection) {
   }
 }
 
-function addPlayerWins(playerSelection, computerSelection) {
-  ROUND_MESSAGE.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
-  playerWins += 1;
-}
-function addComputerWins(playerSelection, computerSelection) {
-  ROUND_MESSAGE.textContent = `You Lose! ${computerSelection} beats ${playerSelection}!`;
-  computerWins += 1;
-}
-function addNobodyWins(playerSelection, computerSelection) {
-  ROUND_MESSAGE.textContent = `This round was a draw! Try again!`;
-  nobodyWins += 1;
-}
-
 function rock(playerSelection, computerSelection) {
   if (computerSelection === "rock") {
     addNobodyWins();
@@ -96,6 +83,20 @@ function scissors(playerSelection, computerSelection) {
   }
   updateElements(playerSelection, computerSelection);
 }
+
+function addPlayerWins(playerSelection, computerSelection) {
+  ROUND_MESSAGE.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+  playerWins += 1;
+}
+function addComputerWins(playerSelection, computerSelection) {
+  ROUND_MESSAGE.textContent = `You Lose! ${computerSelection} beats ${playerSelection}!`;
+  computerWins += 1;
+}
+function addNobodyWins(playerSelection, computerSelection) {
+  ROUND_MESSAGE.textContent = `This round was a draw! Try again!`;
+  nobodyWins += 1;
+}
+
 
 // roundCounter checks to see if the match score equals a win or loss.
 function newGamePrompt() {
