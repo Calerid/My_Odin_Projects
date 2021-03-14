@@ -19,47 +19,31 @@ var playerSelection;
 updateElements()
 
 function setRock() {
-  playerSelection = "rock";
-  computerPlay();
-  startNewRound(playerSelection);
+  var playerSelection = "rock";
+  computerPlay(playerSelection);
 }
 function setPaper() {
-  let playerSelection = "paper";
-  computerPlay();
-  startNewRound(playerSelection);
+  var playerSelection = "paper";
+  computerPlay(playerSelection);
 }
 function setScissors() {
-  playerSelection = "scissors";
-  computerPlay();
-  startNewRound(playerSelection);
+  var playerSelection = "scissors";
+  computerPlay(playerSelection); 
 }
 
-function startNewRound() {
-  roundCount += 1;
-  computerSelection = computerPlay();
+function computerPlay(playerSelection) {
+  var computerSelection = GAME_CHOICE[Math.floor(Math.random() * GAME_CHOICE.length)];
   playGame(playerSelection, computerSelection);
 }
 
-function playerPlay() {
-  playerSelection = prompt(
-    "Please enter Rock, Paper, or scissors"
-  ).toLowerCase();
-  return playerSelection;
-}
-
-function computerPlay() {
-  computerSelection =
-    GAME_CHOICE[Math.floor(Math.random() * GAME_CHOICE.length)];
-  return computerSelection;
-}
-
-function playGame() {
+function playGame(playerSelection, computerSelection) {
+  roundCount += 1;
   if (playerSelection === "rock") {
-    rock(computerSelection);
+    rock(playerSelection, computerSelection);
   } else if (playerSelection === "paper") {
-    paper(computerSelection);
+    paper(playerSelection, computerSelection);
   } else if (playerSelection === "scissors") {
-    scissors(computerSelection);
+    scissors(playerSelection, computerSelection);
   } else if (playerSelection === "restart") {
     newGameYes();
   } else {
@@ -67,20 +51,20 @@ function playGame() {
   }
 }
 
-function addPlayerWins() {
+function addPlayerWins(playerSelection, computerSelection) {
   ROUND_MESSAGE.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
   playerWins += 1;
 }
-function addComputerWins() {
+function addComputerWins(playerSelection, computerSelection) {
   ROUND_MESSAGE.textContent = `You Lose! ${computerSelection} beats ${playerSelection}!`;
   computerWins += 1;
 }
-function addNobodyWins() {
+function addNobodyWins(playerSelection, computerSelection) {
   ROUND_MESSAGE.textContent = `This round was a draw! Try again!`;
   nobodyWins += 1;
 }
 
-function rock() {
+function rock(playerSelection, computerSelection) {
   if (computerSelection === "rock") {
     addNobodyWins();
   } else if (computerSelection === "paper") {
@@ -88,10 +72,10 @@ function rock() {
   } else if (computerSelection === "scissors") {
     addPlayerWins(playerSelection, computerSelection);
   }
-  updateElements();
+  updateElements(playerSelection, computerSelection);
 }
 
-function paper() {
+function paper(playerSelection, computerSelection) {
   if (computerSelection === "rock") {
     addPlayerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
@@ -99,10 +83,10 @@ function paper() {
   } else if (computerSelection === "scissors") {
     addComputerWins(playerSelection, computerSelection);
   }
-  updateElements();
+  updateElements(playerSelection, computerSelection);
 }
 
-function scissors() {
+function scissors(playerSelection, computerSelection) {
   if (computerSelection === "rock") {
     addComputerWins(playerSelection, computerSelection);
   } else if (computerSelection === "paper") {
@@ -110,7 +94,7 @@ function scissors() {
   } else if (computerSelection === "scissors") {
     addNobodyWins();
   }
-  updateElements();
+  updateElements(playerSelection, computerSelection);
 }
 
 // roundCounter checks to see if the match score equals a win or loss.
@@ -134,7 +118,7 @@ function newGameYes() {
   globalReset();
 }
 
-function updateElements() {
+function updateElements(playerSelection, computerSelection) {
   let pScore = `Player Score: ${playerWins}`;
   let cScore = `Computer Score: ${computerWins}`;
   let dCount = `Draws: ${nobodyWins}`;
