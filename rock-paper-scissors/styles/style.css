@@ -1,22 +1,17 @@
-body{
-    text-align: center;
+html {
     background-color: black;
     color: white;
+    text-align: center;
 }
-#content-window{
-    width: auto;
-    padding: 100px;
-    margin: 100px;
+h1{
+    font-size: 2.5em;
 }
-#content-window li{
-    text-align: left;
-    font-size: 1.5em;
+#button-container > button{
+    background: #0075ff;
+    margin: auto;
+    width: 125px;
+    height: 75px;
 }
-#game input[type="button"]{
-    width: 80;
-    height: 50px;
-    border-radius: 10px;
-    background: #6582f8;
-    border-style: none;
-    outline: none;
+#score{
+    font-size: 1.2em;
 }
