@@ -16,25 +16,8 @@ let roundCount = 0;
 
 updateElements()
 
-function setRock() {
-  var playerSelection = "rock";
-  computerPlay(playerSelection);
-}
-function setPaper() {
-  var playerSelection = "paper";
-  computerPlay(playerSelection);
-}
-function setScissors() {
-  var playerSelection = "scissors";
-  computerPlay(playerSelection); 
-}
-
-function computerPlay(playerSelection) {
+function playGame(playerSelection) {
   var computerSelection = GAME_CHOICE[Math.floor(Math.random() * GAME_CHOICE.length)];
-  playGame(playerSelection, computerSelection);
-}
-
-function playGame(playerSelection, computerSelection) {
   roundCount += 1;
   if (playerSelection === "rock") {
     rock(playerSelection, computerSelection);
